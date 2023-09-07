@@ -4,8 +4,7 @@ pipeline {
       stage('e2e-tests') {
          steps {
             sh 'pwd'
-            sh 'mkdir /Users/rolandjurd/test'
-            sh 'ls -alh /Users/rolandjurd/'
+            sh 'npm ci'
             sh 'npx playwright test'
          }
       }
