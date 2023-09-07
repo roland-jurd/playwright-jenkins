@@ -3,6 +3,7 @@ pipeline {
    stages {
       stage('e2e-tests') {
          steps {
+            sh 'sudo chown -R 501:20 "/.npm"'
             sh 'npx playwright test'
          }
       }
