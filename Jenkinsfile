@@ -3,6 +3,7 @@ pipeline {
    stages {
       stage('e2e-tests') {
          steps {
+            sh 'npm cache clean --force'
             sh 'npx playwright test'
          }
       }
