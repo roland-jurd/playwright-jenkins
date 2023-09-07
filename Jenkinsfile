@@ -3,6 +3,7 @@ pipeline {
    stages {
       stage('e2e-tests') {
          steps {
+            sh 'whoami'
             sh 'pwd'
             sh 'ls -alh /Users/rolandjurd/'
             sh 'npx playwright test'
