@@ -3,8 +3,8 @@ pipeline {
    stages {
       stage('e2e-tests') {
          steps {
-            sh 'whoami'
             sh 'pwd'
+            sh 'npm config set cache  /Users/rolandjurd/.jenkins/npm/cache --global'
             sh 'ls -alh /Users/rolandjurd/'
             sh 'npx playwright test'
          }
