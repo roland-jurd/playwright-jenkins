@@ -4,6 +4,7 @@ pipeline {
       stage('e2e-tests') {
          steps {
             sh 'npm cache clean --force'
+            sh 'chown -R 501:20 /.npm'
             sh 'npx playwright test'
          }
       }
