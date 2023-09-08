@@ -17,23 +17,23 @@ pipeline {
       }
       stage('smoke') { steps { script {
          parallel "Test 1": {
-               sh 'npx playwright test --grep "@smoke" --grep-invert "@test2" --max-failures=1'
+               sh 'npm run smoke-1'
          }, "Test 2": {
-               sh 'npx playwright test --grep "@smoke" --grep-invert "@test1" --max-failures=1'
+               sh 'npm run smoke-2'
          }, failFast: true
       }}}
       stage('sanity') { steps { script {
          parallel "Test 1": {
-               sh 'npx playwright test --grep "@sanity" --grep-invert "@test2" --max-failures=1'
+               sh 'npm run sanity-1'
          }, "Test 2": {
-               sh 'npx playwright test --grep "@sanity" --grep-invert "@test1" --max-failures=1'
+               sh 'npm run sanity-2'
          }, failFast: true
       }}}
       stage('regression') { steps { script {
          parallel "Test 1": {
-               sh 'npx playwright test --grep "@regression" --grep-invert "@test2" --max-failures=1'
+               sh 'npm run regression-1'
          }, "Test 2": {
-               sh 'npx playwright test --grep "@regression" --grep-invert "@test1" --max-failures=1'
+               sh 'npm run regression-2'
          }, failFast: true
       }}}
    }
