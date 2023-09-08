@@ -1,7 +1,7 @@
 import { test, expect } from '@playwright/test';
 
 
-test('has title 2 @smoke', async ({ page }) => {
+test('has title 2 @test2 @smoke', async ({ page }) => {
   await page.goto('https://playwright.dev/');
 
   // Expect a title "to contain" a substring.
@@ -9,7 +9,7 @@ test('has title 2 @smoke', async ({ page }) => {
 });
 
 
-test('get started link 2 @sanity', async ({ page }) => {
+test('get started link 2 @test2 @sanity', async ({ page }) => {
   await page.goto('https://playwright.dev/');
 
   // Click the get started link.
@@ -20,7 +20,7 @@ test('get started link 2 @sanity', async ({ page }) => {
 });
 
 
-test('get started link 2 @regression', async ({ page }) => {
+test('get started link 2 @test2 @regression', async ({ page }) => {
   await page.goto('https://playwright.dev/');
 
   // Click the get started link.
