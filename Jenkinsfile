@@ -7,6 +7,11 @@ pipeline {
             sh 'npm i -D @playwright/test'
          }
       }
+      stage('build') {
+         steps {
+            sh 'npm run build'
+         }
+      }
       stage('smoke') { steps { script {
          parallel "Test 1": {
                sh 'npx playwright test --grep "@smoke" --grep-invert "@test2" --max-failures=1'
