@@ -1,5 +1,5 @@
 pipeline {
-   agent { docker { image 'mcr.microsoft.com/playwright:v1.36.0-jammy-test' } }
+   agent { docker { image 'us-east1-docker.pkg.dev/impact-ami/docker-snapshots/playwright:v1.37.1-jammy' } }
    stages {
       stage('e2e-tests') {
          steps {
