@@ -4,6 +4,7 @@ pipeline {
       stage('e2e-tests') {
          steps {
             sh 'pwd'
+            sh 'npm i -D @playwright/test'
             sh 'npx playwright test'
          }
       }
