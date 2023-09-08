@@ -4,11 +4,10 @@ pipeline {
    stage('install dependencies') {
          steps {
             sh 'npm --version'
+            sh 'npx --version'
+            sh 'tsc --version'
             sh 'npm ci'
             sh 'npm i -D @playwright/test'
-            sh 'npx --version'
-            sh 'npm i typescript -g'
-            sh 'tsc --version'
          }
       }
       stage('build') {
