@@ -6,7 +6,7 @@ pipeline {
             sh 'npm --version'
             sh 'npx --version'
             sh 'tsc --version'
-            sh 'sh rm -f package-lock.json && npm install'
+            sh 'npm ci'
          }
       }
       stage('build') {
