@@ -14,6 +14,16 @@ pipeline {
             sh 'npm run build'
          }
       }
+      stage('eslint') {
+         steps {
+            sh 'npm run eslint-report'
+         }
+         post {
+            always {
+                recordIssues enabledForFailure: true, aggregatingResults: true, tool: checkStyle(pattern: 'eslint-report.xml')
+            }
+        }
+      }
       stage('smoke') { steps { script {
          parallel "Test 1": {
                sh 'npm run smoke-1'
