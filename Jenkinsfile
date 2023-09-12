@@ -7,7 +7,6 @@ pipeline {
             sh 'npx --version'
             sh 'tsc --version'
             sh 'npm ci'
-            sh 'npm i -D @playwright/test'
          }
       }
       stage('build') {
