@@ -12,7 +12,9 @@
     "sanity-1": "npx playwright test --grep @sanity --grep-invert @test2",
     "sanity-2": "npx playwright test --grep @sanity --grep-invert @test1",
     "regression-1": "npx playwright test --grep @regression --grep-invert @test2",
-    "regression-2": "npx playwright test --grep @regression --grep-invert @test1"
+    "regression-2": "npx playwright test --grep @regression --grep-invert @test1",
+    "eslint": "eslint src/**/* --ext .ts",
+    "eslint-report": "eslint -f checkstyle src/**/* > eslint-report.xml"
   },
   "keywords": [],
   "author": "",
