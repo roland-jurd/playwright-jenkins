@@ -7,6 +7,8 @@ pipeline {
             sh 'npx --version'
             sh 'tsc --version'
             sh 'npm ci'
+            sh 'ls blob-report'
+            sh 'rm -rf blob-report'
          }
       }
       stage('build') {
