@@ -51,6 +51,13 @@ pipeline {
          steps {
             sh 'ls blob-report'
             sh 'npm run merge-reports'
+            publishHTML (target : [allowMissing: false,
+                      alwaysLinkToLastBuild: true,
+                      keepAll: true,
+                      reportDir: 'playwright-report',
+                      reportFiles: 'index.html',
+                      reportName: 'Playwright Report',
+                      reportTitles: 'Jenkins Playwright Report'])
          }
       }
    }
