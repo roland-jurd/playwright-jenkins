@@ -50,7 +50,7 @@ pipeline {
       stage('generate reports') {
          steps {
             sh 'ls blob-report'
-            sh 'npm merge-reports'
+            sh 'npm run merge-reports'
          }
       }
    }
