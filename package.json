@@ -15,6 +15,7 @@
     "regression-2": "PWTEST_BLOB_REPORT_NAME=regression-2 PWTEST_BLOB_DO_NOT_REMOVE=1 npx playwright test --grep @regression --grep-invert @test1 --reporter=blob",
     "eslint": "eslint src/**/* --ext .ts",
     "eslint-report": "eslint -f checkstyle src/**/* > eslint-report.xml"
+    "merge-reports": "npx playwright merge-reports --reporter html blob-report"
   },
   "keywords": [],
   "author": "",
