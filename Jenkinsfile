@@ -47,9 +47,10 @@ pipeline {
                sh 'npm run regression-2'
          }, failFast: true
       }}}
-      stage('check reports') {
+      stage('generate reports') {
          steps {
             sh 'ls blob-report'
+            sh 'npm merge-reports'
          }
       }
    }
