@@ -6,6 +6,26 @@ pipeline {
           sh 'docker buildx build --platform linux/amd64 -f Dockerfile -t us-east1-docker.pkg.dev/impact-ami/docker-snapshots/playwright:v1.37.1-jammy-1.16.3  .'
          }
       }
+      post{
+             success {
+             }
+             failure {
+                    script{
+                        sh "exit 1"
+                        //or
+                        error "Failed, exiting now..."
+                    }
+                }
+                aborted {
+                }
+                unstable {
+                    script{
+                           sh "exit 1"
+                          //or
+                          error "Unstable, exiting now..."                    
+                     }
+                }
+            }
       // stage('push docker image') {
          // steps {
           // sh 'docker push us-east1-docker.pkg.dev/impact-ami/docker-snapshots/playwright:v1.37.1-jammy-1.16.3'
