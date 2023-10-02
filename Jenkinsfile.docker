@@ -5,8 +5,7 @@ pipeline {
          steps {
           sh 'docker buildx build --platform linux/amd64 -f Dockerfile -t us-east1-docker.pkg.dev/impact-ami/docker-snapshots/playwright:v1.37.1-jammy-1.16.3  .'
          }
-      }
-      post{
+         post{
              success {
              }
              failure {
@@ -26,6 +25,7 @@ pipeline {
                      }
                 }
             }
+         }
        stage('push docker image') {
           steps {
            echo "pushing docker image success"
