@@ -5,23 +5,7 @@ pipeline {
          steps {
           sh 'docker buildx build --platform linux/amd64 -f Dockerfile -t us-east1-docker.pkg.dev/impact-ami/docker-snapshots/playwright:v1.37.1-jammy-1.16.3  .'
          }
-         post{
-
-             failure {
-                    script{
-                        sh "exit 1"
-                        //or
-                        error "Failed, exiting now..."
-                    }
-                }
-                unstable {
-                    script{
-                           sh "exit 1"
-                          //or
-                          error "Unstable, exiting now..."                    
-                     }
-                }
-            }
+         
          }
        stage('push docker image') {
           steps {
