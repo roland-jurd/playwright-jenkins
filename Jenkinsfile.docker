@@ -3,7 +3,7 @@ pipeline {
    stages {
    stage('build docker image') {
          steps {
-          sh 'docker build -t mcr.microsoft.com/playwright:v1.37.1-jammy-1 -f Dockerfile .'
+          sh 'docker build -t mcr.microsoft.com/playwright:v1.37.1-jammy-2 -f Dockerfile .'
          }
          
          }
