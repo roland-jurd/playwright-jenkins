@@ -6,7 +6,7 @@ pipeline {
    stages {
    stage('build docker image') {
          steps {
-          sh 'docker build -t mcr.microsoft.com/playwright:v1.37.1-jammy-${params.TAG} -f Dockerfile .'
+          sh "docker build -t mcr.microsoft.com/playwright:v1.37.1-jammy-${params.TAG} -f Dockerfile ."
          }
          
          }
