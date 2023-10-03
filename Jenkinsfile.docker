@@ -6,7 +6,13 @@ pipeline {
    stages {
    stage('build docker image') {
          steps {
-          sh "docker build -t mcr.microsoft.com/playwright:v1.37.1-jammy-${params.TAG} -f Dockerfile ."
+            script {
+               if (TAG.isEmpty()) { 
+                 currentBuild.result = 'ABORTED'
+                 error("TAG is empty")
+               }  
+                sh "docker build -t mcr.microsoft.com/playwright:v1.37.1-jammy-${params.TAG} -f Dockerfile ."
+            }
          }
          
          }
