@@ -5,8 +5,7 @@
   "main": "index.js",
   "scripts": {
     "build": "tsc",
-    "test": "npx playwright test",
-    "test-login": "npx playwright test login.spec.ts",
+    "test": "npx playwright test"
     "smoke-1": "PWTEST_BLOB_REPORT_NAME=smoke-1 PWTEST_BLOB_DO_NOT_REMOVE=1 npx playwright test --grep @smoke --grep @test1 --reporter=blob",
     "smoke-2": "PWTEST_BLOB_REPORT_NAME=smoke-2 PWTEST_BLOB_DO_NOT_REMOVE=1 npx playwright test --grep @smoke --grep @test2 --reporter=blob",
     "sanity-1": "PWTEST_BLOB_REPORT_NAME=sanity-1 PWTEST_BLOB_DO_NOT_REMOVE=1 npx playwright test --grep @sanity --grep @test1 --reporter=blob",
